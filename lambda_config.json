@@ -1,0 +1,170 @@
+{
+    "functions": {
+        "silvaengine_area_resource": {
+            "base": "/api",
+            "packages": [],
+            "package_files": [],
+            "files": {}
+        },
+        "silvaengine_agenttask": {
+            "base": "/taskqueue/agenttask",
+            "packages": [],
+            "package_files": [],
+            "files": {}
+        },
+        "silvaengine_microcore_openai": {
+            "endpoint_id": "openai",
+            "base": "/beehive/microcore",
+            "packages": [],
+            "package_files": [],
+            "files": {},
+            "hooks": {
+                "packages": [
+                    "openai_assistant_engine",
+                    "ai_marketing_engine",
+                    "ai_rfq_engine",
+                    "ai_coordination_engine",
+                    "ai_operation_hub_engine"
+                ],
+                "events": {
+                    "deploy": [
+                        {
+                            "package_name": "silvaengine_resource",
+                            "class_name": "Resource",
+                            "function_name": "add_resource"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "layers": {
+        "silvaengine_layer": {
+            "packages": [
+                "silvaengine_base",
+                "silvaengine_authorizer",
+                "silvaengine_utility",
+                "silvaengine_dynamodb_base",
+                "pynamodb",
+                "dateutil",
+                "graphene",
+                "aniso8601",
+                "graphql",
+                "graphql_relay",
+                "rx",
+                "libxslt",
+                "promise",
+                "requests",
+                "urllib3",
+                "chardet",
+                "certifi",
+                "idna",
+                "tenacity",
+                "dotenv",
+                "pymysql",
+                "pyathena",
+                "singledispatch",
+                "greenlet",
+                "importlib-metadata",
+                "sqlalchemy",
+                "graphene_sqlalchemy",
+                "graphene_sqlalchemy_filter",
+                "pytzdata",
+                "promise",
+                "pendulum",
+                "cerberus",
+                "deepdiff",
+                "pytz",
+                "openpyxl",
+                "et_xmlfile",
+                "event_triggers",
+                "jose",
+                "ecdsa",
+                "logzero",
+                "requests_oauthlib",
+                "defusedxml",
+                "isodate",
+                "lxml",
+                "requests_toolbelt",
+                "attr",
+                "attrs",
+                "zeep",
+                "oauthlib",
+                "reportlab",
+                "reportlab-3.6.11.dist-info",
+                "reportlab.libs",
+                "PIL",
+                "pillow-10.2.0.dist-info",
+                "pillow.libs",
+                "jinja2",
+                "markupsafe",
+                "humps",
+                "ordered_set",
+                "warlock",
+                "jsonschema",
+                "jsonschema-3.2.0.dist-info",
+                "importlib_resources",
+                "importlib_resources-5.9.0.dist-info",
+                "pyrsistent",
+                "jsonpickle",
+                "elasticsearch",
+                "mutex_engine",
+                "zipp",
+                "sentry_sdk",
+                "pydocparser",
+                "json2html",
+                "Levenshtein",
+                "rapidfuzz",
+                "referencing",
+                "rpds",
+                "jsonschema_specifications",
+                "pypng",
+                "pypng-0.20220715.0.dist-info",
+                "qrcode",
+                "yaml"
+            ],
+            "package_files": [
+                "typing_extensions.py",
+                "phpserialize.py",
+                "appdirs.py",
+                "cached_property.py",
+                "requests_file.py",
+                "six.py",
+                "dicttoxml.py",
+                "xmltodict.py",
+                "jsonpatch.py",
+                "jsonpointer.py",
+                "png.py"
+            ],
+            "files": {}
+        },
+        "silvaengine_microcore_openai_layer": {
+            "packages": [
+                "openai_assistant_engine",
+                "openai_funct_base",
+                "ai_marketing_engine",
+                "ai_rfq_engine",
+                "ai_coordination_engine",
+                "ai_operation_hub_engine",
+                "openai",
+                "pydantic",
+                "pydantic_core",
+                "annotated_types",
+                "anyio",
+                "exceptiongroup",
+                "idna",
+                "distro",
+                "h11",
+                "httpx",
+                "httpcore",
+                "sniffio",
+                "tqdm",
+                "jiter"
+            ],
+            "package_files": [
+                "typing_extensions.py"
+            ],
+            "files": {}
+        }
+    }
+}
