@@ -24,8 +24,7 @@
                     "ai_marketing_engine",
                     "ai_rfq_engine",
                     "ai_coordination_engine",
-                    "ai_operation_hub_engine",
-                    "slack_bot_engine"
+                    "ai_operation_hub_engine"
                 ],
                 "events": {
                     "deploy": [
@@ -147,7 +146,6 @@
                 "ai_rfq_engine",
                 "ai_coordination_engine",
                 "ai_operation_hub_engine",
-                "slack_bot_engine",
                 "openai",
                 "pydantic",
                 "pydantic_core",
@@ -161,8 +159,7 @@
                 "httpcore",
                 "sniffio",
                 "tqdm",
-                "jiter",
-                "slack_bolt"
+                "jiter"
             ],
             "package_files": [
                 "typing_extensions.py"

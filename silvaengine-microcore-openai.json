@@ -122,9 +122,7 @@
             "Environment": {
                "Variables": {
                   "LOGGINGLEVEL": "logging.INFO",
-                  "REGIONNAME": "us-west-2",
-                  "SLACK_BOT_TOKEN": "XXXXXXXXXXXXXXX",
-                  "SLACK_SIGNING_SECRET": "XXXXXXXXXXXXXXX"
+                  "REGIONNAME": "us-west-2"
                }
             },
             "MemorySize": 2048
