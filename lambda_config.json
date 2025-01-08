@@ -6,6 +6,12 @@
             "package_files": [],
             "files": {}
         },
+        "silvaengine_area_resource_http": {
+            "base": "/api",
+            "packages": [],
+            "package_files": [],
+            "files": {}
+        },
         "silvaengine_agenttask": {
             "base": "/taskqueue/agenttask",
             "packages": [],
@@ -25,6 +31,28 @@
                     "ai_rfq_engine",
                     "ai_coordination_engine",
                     "ai_operation_hub_engine",
+                    "openai_action_engine"
+                ],
+                "events": {
+                    "deploy": [
+                        {
+                            "package_name": "silvaengine_resource",
+                            "class_name": "Resource",
+                            "function_name": "add_resource"
+                        }
+                    ]
+                }
+            }
+        },
+        "silvaengine_microcore_slack": {
+            "endpoint_id": "slack",
+            "area": "bot",
+            "base": "/beehive/microcore",
+            "packages": [],
+            "package_files": [],
+            "files": {},
+            "hooks": {
+                "packages": [
                     "slack_bot_engine"
                 ],
                 "events": {
@@ -147,7 +175,7 @@
                 "ai_rfq_engine",
                 "ai_coordination_engine",
                 "ai_operation_hub_engine",
-                "slack_bot_engine",
+                "openai_action_engine",
                 "openai",
                 "pydantic",
                 "pydantic_core",
@@ -161,11 +189,20 @@
                 "httpcore",
                 "sniffio",
                 "tqdm",
-                "jiter",
-                "slack_bolt"
+                "jiter"
             ],
             "package_files": [
                 "typing_extensions.py"
+            ],
+            "files": {}
+        },
+        "silvaengine_microcore_slack_layer": {
+            "packages": [
+                "slack_bot_engine",
+                "slack_bolt",
+                "slack_sdk"
+            ],
+            "package_files": [
             ],
             "files": {}
         }
