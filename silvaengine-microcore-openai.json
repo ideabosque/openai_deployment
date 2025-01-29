@@ -139,7 +139,10 @@
             "BillingMode": "PAY_PER_REQUEST",
             "AttributeDefinitions": [
                {
-                  "AttributeName": "assistant_type",
+                  "AttributeName": "endpoint_id",
+                  "AttributeType": "S"
+               },               {
+                  "AttributeName": "assistant_version_uuid",
                   "AttributeType": "S"
                },
                {
@@ -149,12 +152,31 @@
             ],
             "KeySchema": [
                {
-                  "AttributeName": "assistant_type",
+                  "AttributeName": "endpoint_id",
                   "KeyType": "HASH"
                },
                {
-                  "AttributeName": "assistant_id",
+                  "AttributeName": "assistant_version_uuid",
                   "KeyType": "RANGE"
+               }
+            ],
+            "LocalSecondaryIndexes": [
+               {
+                  "IndexName": "assistant_id-index",
+                  "KeySchema": [
+                     {
+                        "AttributeName": "endpoint_id",
+                        "KeyType": "HASH"
+                     },
+                     {
+                        "AttributeName": "assistant_id",
+                        "KeyType": "RANGE"
+                     }
+                  ],
+                  "Projection": {
+                     "NonKeyAttributes": [],
+                     "ProjectionType": "ALL"
+                  }
                }
             ]
          }
@@ -260,7 +282,7 @@
                },
                {
                   "AttributeName": "timestamp",
-                  "AttributeType": "S"
+                  "AttributeType": "N"
                }
             ],
             "KeySchema": [
@@ -322,6 +344,10 @@
                {
                   "AttributeName": "task_uuid",
                   "AttributeType": "S"
+               },
+               {
+                  "AttributeName": "endpoint_id",
+                  "AttributeType": "S"
                }
             ],
             "KeySchema": [
@@ -332,6 +358,25 @@
                {
                   "AttributeName": "task_uuid",
                   "KeyType": "RANGE"
+               }
+            ],
+            "LocalSecondaryIndexes": [
+               {
+                  "IndexName": "endpoint_id-index",
+                  "KeySchema": [
+                     {
+                        "AttributeName": "function_name",
+                        "KeyType": "HASH"
+                     },
+                     {
+                        "AttributeName": "endpoint_id",
+                        "KeyType": "RANGE"
+                     }
+                  ],
+                  "Projection": {
+                     "NonKeyAttributes": [],
+                     "ProjectionType": "ALL"
+                  }
                }
             ]
          }
